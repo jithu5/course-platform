@@ -21,7 +21,7 @@ class Course(models.Model):
     description = models.TextField(blank=True, null=True)
     publish_date = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to=handle_upload,blank=True,null=True)
-    access = models.CharField(max_length=10, choices=AccessRequirement.choices, default=AccessRequirement.ANYONE)
+    access = models.CharField(max_length=10, choices=AccessRequirement.choices, default=AccessRequirement.EMAIL_REQUIRED)
     status = models.CharField(max_length=10,choices=PublishStatus.choices,default=PublishStatus.DRAFT)
 
     @property 
